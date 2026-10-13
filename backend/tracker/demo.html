@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tracker demo</title></head>
+<body style="font-family:system-ui,sans-serif;padding:32px;max-width:560px">
+  <h1>Tracker demo</h1>
+  <p>Paste a <code>session_id</code> (log in to the app, then copy it from the localStorage key <code>ca_auth</code>), save, and reload. Clicks on this page are then tracked.</p>
+  <input id="sid" placeholder="session id" style="width:100%;padding:8px">
+  <p><button id="save">Save session id</button> <button>Click me</button></p>
+  <script>
+    document.getElementById('save').onclick = function () {
+      localStorage.setItem('ca_session_id', document.getElementById('sid').value.trim());
+      location.reload();
+    };
+  </script>
+  <script src="/tracker/tracker.js"></script>
+</body>
+</html>
